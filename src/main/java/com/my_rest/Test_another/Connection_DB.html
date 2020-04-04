@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Connection_to_DB</title>
+</head>
+<body>
+<!-- This is the connection to MySQL database calling php script Subroutine -->
+<?php
+$dbhost = 'serti.mx:3306;
+$dbuser = 'SertiTest/Examen#Serti';
+$dbpass = 'test';
+$conn = my_sql_conn($dbhost,$dbuser,$dbpass);
+if (! $conn){
+   die('Could't not connect:' .mysql_error());
+}
+echo 'Connected Sucefully';
+mysql_close($conn);
+?>
+</body>
+</html>

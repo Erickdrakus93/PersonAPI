@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Creating Table in MySQL</title>
+</head>
+<body>
+<!--Creating table with php -->
+<?php
+$dbhost = 'serti.mx:3306;
+$dbuser = 'ServiTest/Examen#Serti';
+$dbpass = 'password';
+$conn = mysql_connect($dbhost,$dbuser,$dbpass);
+if(!$conn){
+  die('Could not connect: ' .mysql_error());
+}
+echo 'Connected Sucefully<br';
+$sql = "CREATE TABLE productos_de_la_tienda(".
+"product_id INT NOT_NULL AUTO_INCREMENT, ".
+"product_name VAR_CHAR(300) NOT_NULL, ".
+"product_price REAL AUTO_INCREMENT, ".
+"product_expires_date DATE, ".
+"PRIMARY KEY (product_id));
+$mysql_select_db('SERTI_DB');
+$create_table = mysql_query($sql,$conn);
+
+if(!$create_table){
+  die('Could not create table: ' .mysql_error());
+}
+echo "Table created Sucefully\n";
+mysql_close($conn);
+?>
+
+</body>
+</html>
