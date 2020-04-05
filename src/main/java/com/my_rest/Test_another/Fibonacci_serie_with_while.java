@@ -9,7 +9,7 @@ public class Fibonacci_serie_with_while {
             System.out.println(t1 +  "+ ");
             int sum = t1 +  t2;
             t1 = t2;
-            sum = t2;
+            t2=sum;
             i++;
         }
     }

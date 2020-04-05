@@ -1,7 +1,6 @@
 package com.my_rest.Service;
 
 import com.my_rest.model.Customer;
-import org.graalvm.compiler.replacements.StringIndexOfNode;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
@@ -10,17 +9,17 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.*;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
-import java.io.*;
-import java.net.URI;
-import java.net.URL;
-import java.util.Map;
-import java.util.concurrent.atomic.AtomicInteger;
 import javax.xml.transform.Source;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
+import java.io.*;
+import java.net.URI;
+import java.net.URL;
+import java.util.Map;
+import java.util.concurrent.atomic.AtomicInteger;
 
 // Here we dont use inner methods in the next lines of the code as we can see in the next lines
 // Here we can define the next part of the example as we can see in the next lines of the code
@@ -58,7 +57,7 @@ public class CustomerResource {
         writer.println("</customer>");
     }
 
-    private Map<Integer, Customer> customerDB; // new ConcurrentHashMap<>();
+    private Map<Integer, Customer> customerDB; // new ConcurrentHashMap<>(); this is like the DB simulates
     //of the main example as we can set in the next lines of the code
     private AtomicInteger idCounter = new AtomicInteger(); // Here is main form of the main example as we can see in
     //Todo:Define the Constructor for a Distributed Data Base
@@ -141,7 +140,7 @@ public class CustomerResource {
             @Override
             public void write(OutputStream output) throws WebApplicationException {
                 outputCustomer(output,customer);
-            }
+                }
         };
     }
     // Here we can define the next part of the example
